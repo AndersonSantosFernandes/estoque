@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --standard-color: gray;
+    --background: white;
+    --title-color: white;
+    --bg-title-color: blue;
+}
+body{
+    background-image: url("../imgs/estoque.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+/*header*/
+header{
+    background-color: var(--bg-title-color);
+    padding: 5px 0;
+    text-align: center;
+    vertical-align:middle;
+   
+}
+header nav ul li a{
+    color: var(--title-color);
+    font-size: 22px;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: all 1s;
+}
+header nav ul li a:hover{
+    color: var(--title-color);
+    font-size: 22px;
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--title-color);
+}
+#ins{
+    color: var(--title-color);
+}
+
+/*warning-message*/
+.win{
+    width: 90%;
+    text-align: center;
+    background-color: rgb(159, 237, 159);
+    padding: 5px 0;
+    border: 1px solid rgb(5, 173, 5);
+    color: rgb(5, 173, 5);
+    font-weight: bold;
+    margin: 5px auto;
+}
+.fall{
+    width: 90%;
+    text-align: center;
+    background-color: rgb(253, 183, 183);
+    padding: 5px 0;
+    border: 1px solid rgb(214, 9, 9);
+    color: rgb(214, 9, 9);
+    font-weight: bold;
+    margin: 5px auto;
+}
+/*Exped.php*/
+textarea{
+    width: 100%;
+}
+
+/*user_manage*/
+table{
+    width: 100%;
+    border: 1px solid var(--bg-title-color);
+    
+}
+table td,
+table th{
+    padding: 3px 2px;
+    border: 1px solid var(--bg-title-color);
+}
+
+.red{
+background-color: rgb(228, 92, 92);
+}
+.green{
+    background-color: rgb(95, 218, 95);
+}
+
+/*in_out*/
+.list-in{
+    background-color: white;
+    padding: 15px 5px;
+}
+.ggg{
+    padding-bottom: 15px;
+}
+
+
+
+/*index*/
+h1{
+    text-align: center;
+    background-color: aliceblue;
+    opacity: .7;
+    margin-top: 10px;
+}
+.in{
+    border: 1px solid var(--bg-title-color);
+    background-color: var(--background);
+    opacity: .9;
+}
+.login{
+    text-align: center;
+   margin-top: 100px;
+}
+.login h3{
+    background-color: var(--bg-title-color);
+    color: var(--title-color);
+    padding: 3px;
+    width: 100%;
+}
+.login input{
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+ /*initial.php*/
+.act{
+    height: 150px;
+    border: 1px solid var(--standard-color);
+    background-color: var(--background);
+    opacity: .8;
+    text-align: center;
+    padding-top: 12px;
+}
+.btn-actions{
+    width: 90%;
+    height: 90%;
+   border: none;
+   background-color: aquamarine;
+   box-shadow: inset 0 0 12px var(--standard-color);
+   border-radius: 15px;
+   font-weight: bold;
+   font-size: 20px;
+    transition: all 1s;
+}
+.btn-actions:hover{
+    box-shadow: inset 0 0 50px var(--standard-color);
+}
+
+/*newUser*/
+.registration{
+    border: 1px solid var(--standard-color);
+    margin-top: 30px;
+    background-color: var(--background);
+    padding: 10px;
+}
+.form-cad{
+    text-align: center;
+}
+ .puts{
+    width: 300px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgba(0, 0, 255, 0.105);
+    padding: 3px ;
+}
+.permiton-check{
+    border: 1px solid var(--standard-color);
+}
+
+
+/*edit_prod*/
+
+.edit{
+    width: 150px;
+}
+
+.editcol{
+    text-align: center;
+}
+
+@media(max-width: 400px) {
+    .login{
+        margin-left: 0;
+        width: 100%;
+    }
+}
