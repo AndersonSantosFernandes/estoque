@@ -21,15 +21,24 @@ $view = $viewSelect['action1']
                  <button type="submit" class="puts"> <a href="user_process.php?change=in&action=change_list">Relatório de entradas</a> </button>
             </div>
         </div>
-        <div class="row">
+
+           
+       
+            <div class="row">
             <div class="col-md-12 list-in">
 
                 <?php if($view == "in"):?>
                     
                 <!-- Tabela lista de entradas -->
-                <h4>Relatório de entradas</h4>
-              
-                <hr>
+                <div class="row list-in">
+                    <div class="col-md-6 ">
+                        <h4>Relatório de entradas</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="puts"><a href="interval.php?acao=enter">Entre datas</a></button>
+                    </div>
+                </div>
+
                 <table>
                  <thead>
                     <tr>
@@ -55,9 +64,18 @@ $view = $viewSelect['action1']
                     <?php elseif($view == "out"):?>
 
                 <!-- Tabela lista de saídas -->
-                <h4>Relatório de Saídas</h4>
+                
+                <div class="row list-in">
+                    <div class="col-md-6 ">
+                        <h4>Relatório de Saídas</h4>
+                    </div>
+                    <div class="col-md-6">
+                    <button class="puts"><a href="interval.php?acao=out">Entre datas</a></button>
+                  
+                    </div>
+                </div>
               
-                <hr>
+                
                 <table>
                  <thead>
                     <tr>

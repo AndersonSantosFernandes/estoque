@@ -181,6 +181,21 @@ h1{
     text-align: center;
 }
 
+/*interval*/
+
+.center{
+    text-align: center;
+}
+.ggg{
+    background-color: aliceblue;
+}
+
+
+
+
+
+
+
 @media(max-width: 400px) {
     .login{
         margin-left: 0;

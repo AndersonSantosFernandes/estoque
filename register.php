@@ -18,7 +18,7 @@ include_once("permitions.php");
             <input class="puts" type="text" name="name" id="" placeholder="Nome do produto">
             </div>
             <div>
-            <input class="puts" type="number" name="amount" id="" placeholder="Quantidade">
+            <input class="puts" type="number" name="amount" id=""  readonly placeholder="Inserir quantidade em repor estoque">
             </div>
             <input class="puts" type="submit" value="Cadasrtrar">
 

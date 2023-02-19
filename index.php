@@ -10,12 +10,14 @@
                <form action="authenticate.php" method="post">
                 
                 <div>
-                    <input type="email" name="email" id="" placeholder="Digite se e-mail">
+                    <label for="mail"> <i class="fas fa-envelope"></i>  </label>
+                    <input type="email" name="email" id="mail" placeholder="Digite se e-mail">
                 </div>
                 <div>
-                    <input type="password" name="password" id="" placeholder="Digite sua senha">
+                    <label for="pass"> <i class="fas fa-key"></i>  </label>
+                    <input type="password" name="password" id="pass" placeholder="Digite sua senha">
                 </div>
-
+                <i class="fas fa-sign-in"></i>
                 <input type="submit" value="Entrar">
 
                </form>

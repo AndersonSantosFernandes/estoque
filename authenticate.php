@@ -29,14 +29,14 @@ if($email && $password){
         $message->setMessage("Logado com sucesso","win");
         header("location: initial.php");
     }else{
-        $message->setMessage("Deu merda no login senha errada","fall");
+        $message->setMessage("Deu merda. e-mail e senha  não combinam","fall");
         header("location: index.php");
     }
 
 
 }else{
 //Se vir um ou outro
-$message->setMessage("Deu merda","fall");
+$message->setMessage("Se não preencher não vai né","fall");
 header("location: index.php");
 
 

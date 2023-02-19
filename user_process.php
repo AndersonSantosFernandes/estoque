@@ -44,7 +44,7 @@ if($list == "in"){
     $view = "out";
 }
 
-var_dump($lista);
+
 
 
 
@@ -74,7 +74,7 @@ if ($delete == null) {
     $pdelete = 1;
 }
 
-if ($action === "create") {
+       if($action === "create") {
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->bindParam(":email", $email);
     $stmt->execute();
@@ -293,7 +293,7 @@ if ($action === "create") {
     
     $message->setMessage("Opção deletar ítem", "win");
     header("location:edit_prod.php");
-}
+} 
 
 
 

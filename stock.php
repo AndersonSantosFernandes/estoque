@@ -6,11 +6,13 @@ include_once("queries.php");
 
 ?>
 
-<div class="container">
-    <h1>Consultar estoque</h1>
-    <div class="col-md-10 offset-1  registration">
-        <h3>Saldos gerais no estoque</h3>
-    <table>
+    <div class="container">
+        
+        <h1>Consultar estoque</h1>
+
+        <div class="col-md-10 offset-1  registration">
+            <h3>Saldos gerais no estoque</h3>
+            <table>
                  <thead>
                     <tr>
                         <th>Nome</th>
@@ -21,26 +23,16 @@ include_once("queries.php");
                     </tr>
                  </thead>  
                  <tbody>
-                 <?php foreach ($products as $product): ?>
-                       
-                    <tr>
-                        
-                        <td><?= $product["name"] ?></td>
-                        <td><?= $product["amount"] ?></td>
-                        <td><?= invertDate( $product["inputDate"]) ?></td>
-                        <td><?= $product["user"] ?></td>
-
-                      
-                    </tr>
-                         
-                           <?php endforeach; ?>
-
-                           </tbody>
-                </table>
-
+                    <?php foreach ($products as $product): ?>                       
+                        <tr>                        
+                            <td><?= $product["name"] ?></td>
+                            <td><?= $product["amount"] ?></td>
+                            <td><?= invertDate( $product["inputDate"]) ?></td>
+                            <td><?= $product["user"] ?></td>                      
+                        </tr>                         
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-
-</div>
-
 <?php include_once("templates/footer.php") ?>
