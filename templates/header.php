@@ -1,7 +1,7 @@
 <?php
 include_once("global.php");
 include_once("models/Message.php");
-// include_once("authenticate.php");
+include_once("conexao.php");
 
 $user_log = null;
 if (isset($_SESSION['user'])) {

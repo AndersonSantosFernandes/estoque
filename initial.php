@@ -25,7 +25,7 @@ include_once("permitions.php");
         <a href="register.php"><button class="btn-actions">Cadastrar produto</button></a> 
         </div>
         <div class="col-md-4 act">
-        <a href="edit_prod.php"><button class="btn-actions">Editar Produto</button></a> 
+        <a href="geral.php"><button class="btn-actions">Geral</button></a> 
         </div>
         <div class="col-md-4 act">
         <a href="register_base.php"><button class="btn-actions">Cadastrar destinatário</button></a> 

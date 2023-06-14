@@ -19,6 +19,9 @@ $read = filter_input(INPUT_POST, "read");
 $update = filter_input(INPUT_POST, "update");
 $delete = filter_input(INPUT_POST, "delete");
 
+
+
+
 /*Cadástro de produtos */
 $amount = filter_input(INPUT_POST, "amount");
 
@@ -32,11 +35,14 @@ $tipo = filter_input(INPUT_POST, "tipo");
 $coment = filter_input(INPUT_POST, "coment");
 $user = filter_input(INPUT_POST, "user");
 $qt_exit = filter_input(INPUT_POST, "qt_exit");
+$id = filter_input(INPUT_POST, "id");
 
 
 /* */
 $list = filter_input(INPUT_GET, "change");
 $lista = filter_input(INPUT_GET, "action");
+
+
 
 if($list == "in"){
     $view = "in";
@@ -138,31 +144,44 @@ if ($delete == null) {
     header("location:setpass.php");
 } elseif ($action === "register-product") {
 
-    if ($name && $amount) {
+    $stmt = $conn->query("SELECT * FROM insumos WHERE name = '$name'");
+    $stmt->execute();
+    $lines = $stmt->rowCount();
 
-        if ($amount < 1 && !is_int($amount)) {
-            //Se digitar valor menor que 1
-            $message->setMessage("Não digite valores negativos", "fall");
+   
+    if($lines == 1){
+        $message->setMessage("Já existe um produto com o nome $name!", "fall");
+    }else{
+
+        if ($name) {
+            $amount = 0;
+
+            if (!is_int($amount)) {
+                //Se digitar valor menor que 1
+                $message->setMessage("Não digite valores negativos", "fall");
+            } else {
+                
+                //Campos necessários preenchidos
+                $stmt = $conn->prepare("INSERT INTO insumos ( name, amount, inputDate, user)
+                VALUES(:name, :amount, CURRENT_DATE, :user)");
+
+
+                $stmt->bindParam(":name", $name);
+                $stmt->bindParam(":amount", $amount);
+                $stmt->bindParam(":user", $user);
+                $stmt->execute();
+
+                $message->setMessage("Produto cadastrado com sucesso", "win");
+            }
+
         } else {
-            //Campos necessários preenchidos
-            $stmt = $conn->prepare("INSERT INTO insumos ( name, amount, inputDate, user)
-            VALUES(:name, :amount, CURRENT_DATE, :user)");
-
-
-            $stmt->bindParam(":name", $name);
-            $stmt->bindParam(":amount", $amount);
-            $stmt->bindParam(":user", $user);
-            $stmt->execute();
-
-            $message->setMessage("Produto cadastrado com sucesso", "win");
+            //Algum campo incompleto
+            $message->setMessage("Preencha os campos obrigatórios", "fall");
         }
-
-    } else {
-        //Algum campo incompleto
-        $message->setMessage("Preencha os campos obrigatórios", "fall");
     }
 
     header("location: register.php");
+
 } elseif ($action === "register-base") {
 
     if ($base) {
@@ -187,7 +206,7 @@ if ($delete == null) {
         $qt = $stmtSel->fetch();
 
         if ($qt_exit > $qt["amount"]) {
-            //Se a quantidade se saída for maior que a do estoque
+            //Se a quantidade de saída for maior que a do estoque
 
             $message->setMessage("Saldo insuficiente para esta saída. Verificar estoque", "fall");
 
@@ -284,10 +303,16 @@ if ($delete == null) {
     $message->setMessage("Opção editar preço", "win");
     header("location:edit_prod.php");
 
-} elseif ($action === "edit_name"){
+} elseif ($action == "editar"){
     
-    $message->setMessage("Opção editar nome", "win");
-    header("location:edit_prod.php");
+$stmt = $conn->prepare("UPDATE insumos SET name = :name WHERE id = :id" );
+$stmt->bindParam(":name",$name);
+$stmt->bindParam(":id",$id);
+$stmt->execute();
+
+
+    $message->setMessage("Nome alterado com sucesso", "win");
+    header("location:stock.php");
     
 } elseif ($action === "delete_prod"){
     

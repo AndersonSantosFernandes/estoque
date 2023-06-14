@@ -10,6 +10,9 @@ $view = $viewSelect['action1']
 
 <div class="container ggg">
     <h1>Entradas e saídas</h1>
+
+    <?php if ($permR == 1): ?>
+
     <form class="form-cad" action="" method="post">
         <input type="hidden" name="action" value="change_list">
              <!-- #region -->
@@ -22,8 +25,6 @@ $view = $viewSelect['action1']
             </div>
         </div>
 
-           
-       
             <div class="row">
             <div class="col-md-12 list-in">
 
@@ -75,7 +76,6 @@ $view = $viewSelect['action1']
                     </div>
                 </div>
               
-                
                 <table>
                  <thead>
                     <tr>
@@ -111,8 +111,13 @@ $view = $viewSelect['action1']
              </div>       
         </div>
     </form>
-    
 
 </div>
+<br>
+    <?php else: ?>
+    <br>
+        <h1>Voçê não pode consultar relatório</h1>
+
+    <?php endif; ?>
 
 <?php include_once("templates/footer.php") ?>

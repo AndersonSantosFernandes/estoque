@@ -26,7 +26,7 @@ include_once("queries.php");
                     <select class="puts" name="item" id="insum">
                         <option value="">Selecione</option>
                         <?php foreach ($products as $product): ?>
-                            <option value="<?= $product["name"] ?>"><?= $product["name"] ?></option>
+                            <option value="<?= $product["name"] ?>"><?= $product["name"] ?> - Qt:<?= $product["amount"] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <br>
