@@ -3,6 +3,19 @@ include_once("verify_login.php");
 include_once("permitions.php");
 include_once("queries.php");
 
+$cabecalho = ["nome","entrou","saiu","saldo"];
+
+//abrir o arquivo
+$arquivo = fopen("file.csv","w");
+
+
+//escrever o cabecalho
+fputcsv($arquivo, $cabecalho, ";");
+
+
+
+//fechar arquivo
+fclose($arquivo);
 
 
 ?>
@@ -50,6 +63,12 @@ include_once("queries.php");
     <?php endforeach; ?>
     </table>
     <a href="relatorio.php?query=estok">Gerar PDF</a>
+    <a href="csv.php?query=estok">Gerar CSV</a>
 </div>
+
+<?php 
+
+?>
+
 
 <?php include_once("templates/footer.php") ?>
