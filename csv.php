@@ -7,14 +7,15 @@ $tabela = "insumos";
 $diferenca = strtotime(" -5 hours ");
 $datedate = date("dmYHis", $diferenca);
 
-echo "<br>";
-echo"Testando csv";
+// echo "<br>";
+// echo"Testando csv";
 
 $cabecalho = ["ID","NOME","BASE","QUANTIDADE","DATA_SAIDA","COMENTARIO","ENVIO/CONSUMO","USUARIO"];
 
+header('Content-Disposition: attachment; filename='.$tabela.'_'.$datedate.'.csv');
 //abrir o arquivo
-$arquivo = fopen("../../../Users/Anderson/Downloads/".$tabela."_".$datedate.".csv","w");
-
+// $arquivo = fopen("../../../Users/Anderson/Downloads/".$tabela."_".$datedate.".csv","w");
+$arquivo = fopen('php://output', 'w');
 //escrever o cabecalho
 fputcsv($arquivo,$cabecalho, ";");
 
@@ -27,8 +28,7 @@ foreach($showInsumos as  $insumos){
 
 //fechar arquivo
 fclose($arquivo);
-$msg->setMessage("Arquivo salvo em Downloads".$tabela."_".$datedate.".csv","win");
+// $msg->setMessage("Arquivo salvo em Downloads".$tabela."_".$datedate.".csv","win");
 // header("location:geral.php");
 
 ?>
-<!-- <a href="lista.php">Lista</a> -->
