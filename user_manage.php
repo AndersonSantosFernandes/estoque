@@ -1,7 +1,7 @@
 <?php
 include_once("templates/header.php");
 include_once("permitions.php");
-include_once("queries.php");
+include_once("queryes.php");
 
 
 ?>

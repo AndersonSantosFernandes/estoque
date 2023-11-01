@@ -1,14 +1,13 @@
 <?php 
 include_once("lista.php");
-include_once("models/Message.php");
-$msg = new Message();
+
+
 $tabela = "insumos";
 
 $diferenca = strtotime(" -5 hours ");
 $datedate = date("dmYHis", $diferenca);
 
-// echo "<br>";
-// echo"Testando csv";
+
 
 $cabecalho = ["ID","NOME","BASE","QUANTIDADE","DATA_SAIDA","COMENTARIO","ENVIO/CONSUMO","USUARIO"];
 
